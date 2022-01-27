@@ -225,6 +225,7 @@ if (defined(ohos_lite)) {
     install_images = [
       "system",
       "updater",
+      "ramdisk",
     ]
     part_name = "init"
     install_enable = true
