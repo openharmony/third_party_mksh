@@ -14,14 +14,16 @@
         "en": ""
     },
     "component": {
-        "name": "thirdparty_mksh",
+        "name": "mksh",
         "subsystem": "",
         "syscap": [],
         "features": [],
-        "adapted_system_type": [],
-        "rom": "",
-        "ram": "",
-        "deps": {
+        "adapted_system_type": [
+            "small"
+        ],
+        "rom": "172KB",
+        "ram": "344KB",
+        "external_deps": {
             "components": [],
             "third_party": []
         },
