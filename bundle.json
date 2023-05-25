@@ -15,7 +15,7 @@
     },
     "component": {
         "name": "mksh",
-        "subsystem": "",
+        "subsystem": "thirdparty",
         "syscap": [],
         "features": [],
         "adapted_system_type": [
