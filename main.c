@@ -510,7 +510,7 @@ main_init(int argc, const char *argv[], Source **sp, struct block **lp)
 		if (!(s->start = s->str = argv[argi++]))
 			errorf(Tf_optfoo, "", "", 'c', Treq_arg);
 		while (*s->str) {
-			if (ctype(*s->str, C_QUOTE))
+			if (ctype(*s->str, C_QUOTE) && (*s->str != '\''))
 				break;
 			s->str++;
 		}
