@@ -174,7 +174,6 @@ if (defined(ohos_lite)) {
       "-fPIE",
 
       # various options we choose
-      "-DDEBUG_LEAKS",
       "-DMKSH_ASSUME_UTF8",
       "-DMKSH_DONT_EMIT_IDSTRING",
 
