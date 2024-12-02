@@ -48,7 +48,7 @@ static struct shf ptree_heredoc;
 		ptree_thehere = shf_sclose(&ptree_heredoc);	\
 		shf_puts(ptree_thehere, (shf));			\
 		shf_putc('\n', (shf));				\
-		afree(ptree_thehere, ATEMP)			\
+		afree(ptree_thehere, ATEMP); 		\
 		ptree_hashere = false;				\
 		/*prevent_semicolon = true;*/			\
 	}							\
