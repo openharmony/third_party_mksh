@@ -2755,7 +2755,7 @@ struct tbl *arraysearch(struct tbl *, uint32_t);
 char **makenv(void);
 void change_winsz(void);
 size_t array_ref_len(const char *) MKSH_A_PURE;
-char *arrayname(const char *);
+struct tbl *arraybase(const char*);
 mksh_uari_t set_array(const char *, bool, const char **);
 uint32_t hash(const void *) MKSH_A_PURE;
 uint32_t chvt_rndsetup(const void *, size_t) MKSH_A_PURE;

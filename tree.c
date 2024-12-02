@@ -43,8 +43,12 @@ static bool ptree_hashere;
 static struct shf ptree_heredoc;
 #define ptree_outhere(shf) do {					\
 	if (ptree_hashere) {					\
-		shf_puts(shf_sclose(&ptree_heredoc), (shf));	\
+		char *ptree_thehere;				\
+								\
+		ptree_thehere = shf_sclose(&ptree_heredoc);	\
+		shf_puts(ptree_thehere, (shf));			\
 		shf_putc('\n', (shf));				\
+		afree(ptree_thehere, ATEMP)			\
 		ptree_hashere = false;				\
 		/*prevent_semicolon = true;*/			\
 	}							\

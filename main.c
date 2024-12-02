@@ -1198,6 +1198,7 @@ reclaim(void)
 	 */
 	if (source && source->areap == &e->area)
 		source = NULL;
+	retrace_info = NULL;
 	afreeall(&e->area);
 }
 
