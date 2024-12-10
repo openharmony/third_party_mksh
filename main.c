@@ -85,7 +85,6 @@ static const char *initcoms[] = {
 	"nameref=\\\\builtin typeset -n",
 	"nohup=nohup ",
 	"r=\\\\builtin fc -e -",
-	"login=\\\\builtin exec login",
 	NULL,
 	 /* this is what AT&T ksh seems to track, with the addition of emacs */
 	Talias, "-tU",
