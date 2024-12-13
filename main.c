@@ -1594,7 +1594,7 @@ openpipe(int *pv)
 	int lpv[2];
 
 	if (pipe(lpv) < 0)
-		errorf("can't create pipe:%s - try again", cstrerror(errno));
+		errorf("can't create pipe - try again");
 	pv[0] = savefd(lpv[0]);
 	if (pv[0] != lpv[0])
 		close(lpv[0]);
