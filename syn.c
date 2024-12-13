@@ -272,7 +272,7 @@ get_command(int cf, int sALIAS)
 	XPtrV args, vars;
 	struct nesting_state old_nesting;
 	bool check_decl_utility;
-	struct ioword *iops[NUFILE + 1];
+	static struct ioword *iops[NUFILE + 1];
 
 	XPinit(args, 16);
 	XPinit(vars, 16);
