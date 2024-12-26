@@ -27,3 +27,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 MKSH_SRC_DIR = [ "//third_party/mksh" ]
+
+declare_args() {
+  terminal_ext = false
+}

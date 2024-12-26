@@ -41,6 +41,14 @@ __RCSID("$MirOS: src/bin/mksh/edit.c,v 1.357 2020/10/31 05:02:17 tg Exp $");
 #define MKSH_CLS_STRING		KSH_ESC_STRING "[;H" KSH_ESC_STRING "[J"
 #endif
 
+/* clearing with "\e[;H\e[J" drops line history
+ * so we use "\e[2J\e[H" instead
+ */
+#ifdef MKSH_TERMINAL_EXT
+#undef MKSH_CLS_STRING
+#define MKSH_CLS_STRING		KSH_ESC_STRING "[2J" KSH_ESC_STRING "[H"
+#endif
+
 #if !defined(MKSH_SMALL) || !MKSH_S_NOVI
 static const char ctrl_x_e[] = "fc -e \"${VISUAL:-${EDITOR:-vi}}\" --";
 #endif
@@ -1060,8 +1068,13 @@ static struct x_defbindings const x_defbindings[] = {
 	{ XFUNC_goto_hist,		1,	'g'	},
 	{ XFUNC_mv_end,			0,  CTRL_E	},
 	{ XFUNC_mv_beg,			0,  CTRL_A	},
+#ifdef MKSH_TERMINAL_EXT
 	{ XFUNC_draw_line,		1,  CTRL_L	},
 	{ XFUNC_cls,			0,  CTRL_L	},
+#else
+	{ XFUNC_draw_line,		0,  CTRL_L	},
+	{ XFUNC_cls,			1,  CTRL_L	},
+#endif
 	{ XFUNC_meta1,			0,  CTRL_BO	},
 	{ XFUNC_meta2,			0,  CTRL_X	},
 	{ XFUNC_kill,			0,  CTRL_K	},
