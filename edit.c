@@ -41,7 +41,8 @@ __RCSID("$MirOS: src/bin/mksh/edit.c,v 1.357 2020/10/31 05:02:17 tg Exp $");
 #define MKSH_CLS_STRING		KSH_ESC_STRING "[;H" KSH_ESC_STRING "[J"
 #endif
 
-/* clearing with "\e[;H\e[J" drops line history
+/*
+ * clearing with "\e[;H\e[J" drops line history
  * so we use "\e[2J\e[H" instead
  */
 #ifdef MKSH_TERMINAL_EXT
