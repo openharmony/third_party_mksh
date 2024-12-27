@@ -143,6 +143,7 @@ if (defined(ohos_lite)) {
 } else {
   import("//build/config/ohos/config.gni")
   import("//build/ohos.gni")
+  import("mksh.gni")
   ohos_executable("sh") {
     sources = [
       "edit.c",
@@ -244,6 +245,11 @@ if (defined(ohos_lite)) {
       "-DMKSH_UNLIMITED",
       "-DMKSH_BUILD_R=593",
     ]
+
+    if (mksh_terminal_ext) {
+      defines = [ "MKSH_TERMINAL_EXT" ]
+    }
+
     ldflags = [
       "-pie",
       "-Wl,-z,relro",
