@@ -17,7 +17,7 @@
         "name": "mksh",
         "subsystem": "thirdparty",
         "syscap": [],
-        "features": [ "terminal_ext" ],
+        "features": [ "mksh_terminal_ext" ],
         "adapted_system_type": [
             "standard",
             "small"

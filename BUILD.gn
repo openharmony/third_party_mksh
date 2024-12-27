@@ -246,7 +246,7 @@ if (defined(ohos_lite)) {
       "-DMKSH_BUILD_R=593",
     ]
 
-    if (terminal_ext) {
+    if (mksh_terminal_ext) {
       defines = [ "MKSH_TERMINAL_EXT" ]
     }
 

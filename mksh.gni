@@ -29,5 +29,5 @@
 MKSH_SRC_DIR = [ "//third_party/mksh" ]
 
 declare_args() {
-  terminal_ext = false
+  mksh_terminal_ext = false
 }
