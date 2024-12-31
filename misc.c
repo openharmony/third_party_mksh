@@ -2392,6 +2392,7 @@ chvt(const Getopt *go)
 			errorf(Tf_sD_s_s, "chvt", Tcant_open, dv);
 		}
 	}
+	afree(cp, ATEMP);
 	if (go->optarg[0] != '!') {
 		switch (fork()) {
 		case -1:

@@ -1487,6 +1487,8 @@ set_prompt(int to, Source *s)
 			Area *saved_atemp;
 			int saved_lineno;
 
+			saved_atemp = ATEMP;
+			newenv(E_ERRH);
 			ps1 = str_val(global("PS1"));
 			shf = shf_sopen(NULL, strlen(ps1) * 2,
 			    SHF_WR | SHF_DYNAMIC, NULL);
@@ -1500,8 +1502,6 @@ set_prompt(int to, Source *s)
 			saved_lineno = current_lineno;
 			if (s)
 				current_lineno = s->line + 1;
-			saved_atemp = ATEMP;
-			newenv(E_ERRH);
 			if (kshsetjmp(e->jbuf)) {
 				prompt = safe_prompt;
 				/*
@@ -1516,6 +1516,7 @@ set_prompt(int to, Source *s)
 				strdupx(prompt, cp, saved_atemp);
 			}
 			current_lineno = saved_lineno;
+			/* frees everything in post-newenv ATEMP */
 			quitenv(NULL);
 		}
 		break;
