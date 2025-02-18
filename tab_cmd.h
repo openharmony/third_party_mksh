@@ -76,13 +76,11 @@
     "which=which",\
     "xxd=xxd",\
     "zcat=zcat",\
-
     "df=df",\
     "du=du",\
     "free=free",\
     "mount=mount",\
     "sync=sync",\
-
     "cal=cal",\
     "date=date",\
     "hwclock=hwclock",\
@@ -90,26 +88,21 @@
     "time=time",\
     "uptime=uptime",\
     "usleep=usleep",\
-
     "hostname=hostname",\
     "nproc=nproc",\
     "printenv=printenv",\
     "uname=uname",\
     "env=env",\
-
     "false=false",\
     "sh=sh",\
     "test=test",\
     "true=true",\
     "yes=yes",\
-
     "help=help",\
     "toybox=toybox",\
-
     "reset=reset",\
     "tty=tty",\
     "clear=clear",\
-
     "mcookie=mcookie",\
     "mkpasswd=mkpasswd",\
     "uuidgen=uuidgen",\
@@ -137,11 +130,9 @@
     "ftpput=ftpput",\
     "telnet=telnet",\
     "wget=wget",\
-
     "kill=kill",\
     "pkill=pkill",\
-    "killall=killall"
-
+    "killall=killall",\
 	"login=\\\\builtin exec login",
  
 #endif
