@@ -132,7 +132,6 @@
     "wget=wget",\
     "kill=kill",\
     "pkill=pkill",\
-    "killall=killall",\
-	"login=\\\\builtin exec login",
+    "killall=killall",
  
 #endif
