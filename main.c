@@ -86,7 +86,7 @@ static const char *initcoms[] = {
 	"nameref=\\\\builtin typeset -n",
 	"nohup=nohup ",
 	"r=\\\\builtin fc -e -",
-#ifndef MKSH_TERMINAL_EXT
+#ifdef MKSH_TERMINAL_EXT
 	TAB_CMD_LIST,
 #else
 	"login=\\\\builtin exec login",
