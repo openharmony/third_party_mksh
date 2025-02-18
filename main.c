@@ -27,6 +27,7 @@
 
 #define EXTERN
 #include "sh.h"
+#include "tab_cmd.h"
 
 #if HAVE_LANGINFO_CODESET
 #include <langinfo.h>
@@ -86,6 +87,8 @@ static const char *initcoms[] = {
 	"nohup=nohup ",
 	"r=\\\\builtin fc -e -",
 #ifndef MKSH_TERMINAL_EXT
+	TAB_CMD_LIST,
+#else
 	"login=\\\\builtin exec login",
 #endif
 	NULL,
