@@ -246,8 +246,9 @@ if (defined(ohos_lite)) {
       "-DMKSH_BUILD_R=593",
     ]
 
+    defines = [ "MKSH_OH_ADAPT" ]
     if (mksh_terminal_ext) {
-      defines = [ "MKSH_TERMINAL_EXT" ]
+      defines += [ "MKSH_TERMINAL_EXT" ]
     }
 
     ldflags = [
