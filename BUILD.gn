@@ -246,7 +246,7 @@ if (defined(ohos_lite)) {
     ]
 
     defines = [ "MKSH_OH_ADAPT" ]
-  
+
     ldflags = [
       "-pie",
       "-Wl,-z,relro",
