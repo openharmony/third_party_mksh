@@ -1877,6 +1877,14 @@ x_load_hist(char **hp)
 {
 	char *sp = NULL;
 
+	#ifdef MKSH_OH_ADAPT
+		// update xx_cols before call x_adjust.
+		change_winsz();
+		if (x_cols != xx_cols) {
+			xx_cols = x_cols;
+		}
+	#endif
+
 	if (hp == histptr + 1) {
 		sp = holdbufp;
 		modified = 0;
