@@ -244,6 +244,9 @@ if (defined(ohos_lite)) {
       "-DMKSH_UNLIMITED",
       "-DMKSH_BUILD_R=593",
     ]
+
+    defines = [ "MKSH_OH_ADAPT" ]
+
     ldflags = [
       "-pie",
       "-Wl,-z,relro",
