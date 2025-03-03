@@ -1167,6 +1167,12 @@ builtin(const char *name, int (*func) (const char **))
 struct tbl *
 findcom(const char *name, int flags)
 {
+#ifdef MKSH_OH_ADAPT
+	// fix crash for 'exec -a0'
+	if (name == NULL) {
+		return NULL;
+	}
+#endif
 	static struct tbl temp;
 	uint32_t h = hash(name);
 	struct tbl *tp = NULL, *tbi;
