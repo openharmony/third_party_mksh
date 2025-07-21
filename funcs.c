@@ -566,7 +566,7 @@ c_print(const char **wp)
 
 		s = Xstring(xs, xp);
 #ifdef MKSH_OH_ADAPT
-        unsigned int retry_count = 0；
+        unsigned int retry_count = 0;
 		while (len > 0) {
 			ssize_t nwritten = write(po.fd, s, len);
 			retry_count = nwritten ? 0 : retry_count + 1;
