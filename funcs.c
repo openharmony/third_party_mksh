@@ -570,7 +570,7 @@ c_print(const char **wp)
 		while (len > 0) {
 			ssize_t nwritten = write(po.fd, s, len);
 			retry_count = nwritten ? 0 : retry_count + 1;
-			if (nwritten < 0 || retry_count > = MAX_WRITE_RETRY_TIME) {
+			if (nwritten < 0 || retry_count >= MAX_WRITE_RETRY_TIME) {
 				if (nwritten < 0 && errno == EINTR) {
 					if (po.copipe)
 						restore_pipe();
