@@ -565,6 +565,29 @@ c_print(const char **wp)
 			po.coproc = po.copipe = false;
 
 		s = Xstring(xs, xp);
+#ifdef MKSH_OH_ADAPT
+        unsigned int retry_count = 0;
+		while (len > 0) {
+			ssize_t nwritten = write(po.fd, s, len);
+			retry_count = nwritten ? 0 : retry_count + 1;
+			if (nwritten < 0 || retry_count >= MAX_WRITE_RETRY_TIME) {
+				if (nwritten < 0 && errno == EINTR) {
+					if (po.copipe)
+						restore_pipe();
+					/* give the user a chance to ^C out */
+					intrcheck();
+					/* interrupted, try again */
+					if (po.coproc)
+						po.copipe = block_pipe();
+					continue;
+				}
+				c = 1;
+				break;
+			}
+			s += nwritten;
+			len -= nwritten;
+		}
+#else
 		while (len > 0) {
 			ssize_t nwritten;
 
@@ -585,6 +608,7 @@ c_print(const char **wp)
 			s += nwritten;
 			len -= nwritten;
 		}
+#endif
 		if (po.copipe)
 			restore_pipe();
 	}

@@ -258,6 +258,10 @@ typedef void (*sig_t)(int);
 typedef MKSH_TYPEDEF_SIG_ATOMIC_T sig_atomic_t;
 #endif
 
+#ifdef MKSH_OH_ADAPT
+#define MAX_WRITE_RETRY_TIME 10
+#endif
+
 #ifdef MKSH_TYPEDEF_SSIZE_T
 typedef MKSH_TYPEDEF_SSIZE_T ssize_t;
 #endif
