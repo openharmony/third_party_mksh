@@ -30,4 +30,5 @@ MKSH_SRC_DIR = [ "//third_party/mksh" ]
 
 declare_args() {
   mksh_terminal_ext = false
+  mksh_feature_support_usr_symlink = false
 }
