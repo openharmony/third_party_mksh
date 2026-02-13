@@ -257,6 +257,11 @@ if (defined(ohos_lite)) {
       "-Wl,-z,now",
       "-Wl,-z,noexecstack",
     ]
+    if (mksh_feature_support_usr_symlink) {
+      symlink_target_name = [
+        "../usr/bin/sh",
+      ]
+    }
     install_images = [
       "system",
       "ramdisk",
